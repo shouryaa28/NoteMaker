@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheets/update.css">
+</head>
+
+<body>
+    <div id="back">
+        <img src="../images/redghead.png" alt="">
+        <div id="container">
+            <h1>Please update your thoughts here :</h1>
+            <form action=<%='/updatekaro/' +data._id%> method="POST">
+                <textarea placeholder=" Update Your Thoughts" name="post"><%= data.post%></textarea>
+            </form>
+            <img id="abcd" src="../images/Group 2.png" alt="">
+        </div>
+    </div>
+    <script>
+        document.querySelector('#abcd').addEventListener('click', function () {
+            document.querySelector('form').submit();
+        })
+    </script>
+</body>
+
+</html>

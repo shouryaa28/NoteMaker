@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var mongoose = require('mongoose');
 var app = express();
 
 // view engine setup
@@ -37,5 +37,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+mongoose.connect('mongodb+srv://shouryaa:uaePuSnuLY5b9Pbw@cluster0.r7u6e.mongodb.net/test')
+.then(() => {
+  app.listen(8080, () => {
+    console.log('Listening on port 8080')
+  })
+}).catch((err)=> {
+  console.log(err)
+})
 
 module.exports = app;

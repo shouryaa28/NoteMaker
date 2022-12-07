@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/project')
 
 const postSchema = mongoose.Schema({
   post: String,
